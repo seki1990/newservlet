@@ -11,13 +11,12 @@ import com.alibaba.fastjson.JSON;
 
 
 public class _GetCategoryNewsServlet extends HttpServlet {
-	Mysql mysql = new Mysql("jdbc:mysql://localhost/chuangwai?useUnicode=true&characterEncoding=utf8","root","chuangwai123");
+	private static Mysql mysql = new Mysql("jdbc:mysql://localhost/chuangwai?useUnicode=true&characterEncoding=utf8","root","chuangwai123");
 	@Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
         response.setCharacterEncoding("utf-8");
 
-        //Mysql mysql = new Mysql("jdbc:mysql://localhost/chuangwai?useUnicode=true&characterEncoding=utf8","root","chuangwai123");
 		ResultSet ret ;
 		ret = mysql.query("select distinct category from news;");
 	    System.out.println("11111111111");
