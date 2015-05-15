@@ -10,10 +10,12 @@ import org.eclipse.jetty.servlet.ServletHolder;
  * Created by xingshi on 15/5/14.
  */
 public class NewsServer {
+	
 	public static void main(String[] args)
 	{
 		NewsServer.start();
 	}
+	
     public static void start(){
         Server server = new Server();
         SelectChannelConnector connector = new SelectChannelConnector();
