@@ -25,8 +25,8 @@ public class NewsServer {
         ServletContextHandler ctx = new ServletContextHandler(ServletContextHandler.SESSIONS);
         ctx.setContextPath("/");
         ctx.addServlet(new ServletHolder(new _GetCategoryNewsServlet()), "/getcategory");
-        ctx.addServlet(new ServletHolder(new _GetNewServlet()), "/getnews");
-        ctx.addServlet(new ServletHolder(new _GetNewsServlet()), "/getnew");
+        ctx.addServlet(new ServletHolder(new _GetNewsServlet()), "/getnews");
+        ctx.addServlet(new ServletHolder(new _GetNewServlet()), "/getnew");
         server.setHandler(ctx);
         try{
             server.start();
