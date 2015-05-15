@@ -20,6 +20,7 @@ public class _GetNewsListServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         String a = request.getParameter("cat");
         String b = request.getParameter("num");
+        System.out.println(a+"---"+b);
         
 		ResultSet ret ;
 		ret = mysql.query("select id,category,title,source1,source2,pub_time from news where category=\""+a+"\" order by pub_time desc limit "+b+";");
