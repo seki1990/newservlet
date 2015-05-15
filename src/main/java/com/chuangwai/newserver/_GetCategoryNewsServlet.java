@@ -19,12 +19,14 @@ public class _GetCategoryNewsServlet extends HttpServlet {
         Mysql mysql = new Mysql("jdbc:mysql://localhost/chuangwai?useUnicode=true&characterEncoding=utf8","root","chuangwai123");
 		ResultSet ret ;
 		ret = mysql.query("select distinct category from news;");
-	    try {
+	    System.out.println("11111111111");
+		try {
 	    	ArrayList<String> ans = new ArrayList<String>() ;
 	    	while( ret.next() )
 	    	{
 	    		ans.add( ret.getString(1) );
 	    	}
+	    	System.out.println(ans);
             response.getWriter().println(JSON.toJSONString(ans));
         }catch (Exception e){ 
             e.printStackTrace();
